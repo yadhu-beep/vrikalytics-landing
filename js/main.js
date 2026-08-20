@@ -1,4 +1,31 @@
+/* ── Splash screen ── */
+(function () {
+  const splash = document.getElementById('splash');
+  if (!splash) return;
+  // Diamond stroke total ≈ 25 units; dasharray set to 30 in CSS
+  setTimeout(() => {
+    splash.classList.add('is-out');
+    document.body.classList.remove('splash-active');
+    splash.addEventListener('transitionend', () => splash.remove(), { once: true });
+  }, 1900);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ── Theme toggle ── */
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('vk-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('vk-theme', 'dark');
+      }
+    });
+  }
 
   /* ── Footer year ── */
   const yearEl = document.getElementById('year');
@@ -104,20 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── Magnetic buttons ── */
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const r = btn.getBoundingClientRect();
-      const x = ((e.clientX - r.left - r.width  / 2) * 0.28).toFixed(1);
-      const y = ((e.clientY - r.top  - r.height / 2) * 0.28).toFixed(1);
-      btn.style.setProperty('--bx', x + 'px');
-      btn.style.setProperty('--by', y + 'px');
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.setProperty('--bx', '0px');
-      btn.style.setProperty('--by', '0px');
-    });
-  });
 
   /* ── FAQ accordion ── */
   const accordionItems = document.querySelectorAll('.accordion__item');
