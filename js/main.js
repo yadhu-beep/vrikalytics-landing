@@ -159,6 +159,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── Cookie consent banner ── */
+  const cookieBanner  = document.getElementById('cookieBanner');
+  const cookieAccept  = document.getElementById('cookieAccept');
+  const cookieDecline = document.getElementById('cookieDecline');
+  if (cookieBanner && !localStorage.getItem('cookie-consent')) {
+    setTimeout(() => cookieBanner.classList.add('is-visible'), 1000);
+    const dismiss = (choice) => {
+      localStorage.setItem('cookie-consent', choice);
+      cookieBanner.classList.remove('is-visible');
+    };
+    cookieAccept?.addEventListener('click',  () => dismiss('accepted'));
+    cookieDecline?.addEventListener('click', () => dismiss('declined'));
+  }
+
   /* ── Scroll reveal ── */
   const revealEls = document.querySelectorAll('[data-reveal]');
   if (revealEls.length && 'IntersectionObserver' in window) {
