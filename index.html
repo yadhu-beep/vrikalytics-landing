@@ -28,6 +28,7 @@ body{
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -82,9 +83,11 @@ button{font-family:inherit}
 /* ── WRAP ── */
 .w{max-width:1280px;margin:0 auto;padding:0 48px}
 @media(max-width:768px){
-  .w{
-    padding-left:max(28px,env(safe-area-inset-left,0px));
-    padding-right:max(28px,env(safe-area-inset-right,0px));
+  .w,
+  .nav__i,
+  .cookie-banner__inner{
+    padding-left:max(24px,env(safe-area-inset-left,0px));
+    padding-right:max(24px,env(safe-area-inset-right,0px));
   }
 }
 
@@ -539,27 +542,16 @@ button{font-family:inherit}
   .nav__ham{display:flex}
 }
 @media(max-width:600px){
-  .nav__i{
-    padding-left:max(20px,env(safe-area-inset-left,0px));
-    padding-right:max(20px,env(safe-area-inset-right,0px));
-  }
   .hero{padding:112px 0 72px}
   .hero__h br{display:none}
   .sec-inner,.faq-inner,.security-inner,.logos-inner,.int-inner,.contact-inner{padding:64px 0}
   .metrics-inner{grid-template-columns:1fr 1fr}
-  .m-item{
-    padding-left:max(20px,env(safe-area-inset-left,0px));
-    padding-right:max(20px,env(safe-area-inset-right,0px));
-  }
+  .m-item{padding-left:16px;padding-right:16px}
   .form-row{grid-template-columns:1fr}
   .a-step{grid-template-columns:48px 1fr}
   .a-n{font-size:2.5rem}
   .cap-sub{display:none}
   .cap-trigger{gap:14px}
-  .cookie-banner__inner{
-    padding-left:max(20px,env(safe-area-inset-left,0px));
-    padding-right:max(20px,env(safe-area-inset-right,0px));
-  }
 }
   </style>
 </head>
