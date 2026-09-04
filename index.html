@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vrikalytics — Fintech & Payment Infrastructure Engineering</title>
+  <title>Vrikalytics — Fintech &amp; Payment Infrastructure Engineering</title>
   <meta name="description" content="We design and build payment, mandate, risk, reconciliation, and financial-ops systems for banks, fintechs, and NBFCs. Precision engineering for regulated businesses." />
   <link rel="canonical" href="https://vrikalytics.com/" />
   <!-- Google tag (gtag.js) -->
@@ -16,289 +16,729 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script>(function(){var t=localStorage.getItem('vk-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}());</script>
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#fff;
+  color:#111110;
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit}
+
+:root{
+  --green:#0D5C38;
+  --green-mid:#1A7F50;
+  --green-pale:#EBF5EF;
+  --border:#E6E3DD;
+  --t2:#6A6864;
+  --t3:#AAA7A2;
+}
+
+/* ── TOPBAR ── */
+.topbar{height:3px;background:var(--green);position:fixed;top:0;left:0;right:0;z-index:200}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;top:3px;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s;
+}
+.nav.sc{border-bottom-color:var(--border)}
+.nav__i{
+  max-width:1280px;margin:0 auto;padding:0 48px;
+  display:flex;align-items:center;justify-content:space-between;height:60px;
+}
+.nav__logo{
+  display:flex;align-items:center;gap:9px;
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9375rem;letter-spacing:-.01em;
+}
+.nav__links{display:flex;align-items:center;gap:36px}
+.nav__links a{
+  font-size:.8125rem;font-weight:500;color:var(--t2);
+  transition:color .2s;
+}
+.nav__links a:hover{color:#111110}
+.nav__cta{
+  font-size:.8125rem;font-weight:600;
+  padding:8px 18px;
+  background:var(--green);color:#fff;
+  border-radius:3px;
+  transition:background .2s;
+}
+.nav__cta:hover{background:var(--green-mid)}
+
+/* ── WRAP ── */
+.w{max-width:1280px;margin:0 auto;padding:0 48px}
+@media(max-width:768px){.w{padding:0 24px}}
+
+/* ── HERO ── */
+.hero{padding:140px 0 96px;border-bottom:1px solid var(--border)}
+.hero__label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green);
+  margin-bottom:32px;
+}
+.hero__label::before{content:'';width:24px;height:1px;background:var(--green)}
+.hero__h{
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+  font-size:clamp(2.75rem,5.8vw,5.25rem);
+  line-height:1.06;
+  letter-spacing:-.04em;
+  max-width:900px;
+  margin-bottom:36px;
+}
+.hero__h em{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:-.02em;
+  color:var(--green);
+}
+.hero__split{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  align-items:start;padding-top:16px;
+  border-top:1px solid var(--border);
+}
+.hero__sub{font-size:1.0625rem;color:var(--t2);line-height:1.7;max-width:480px}
+.hero__right{display:flex;flex-direction:column;gap:24px;padding-top:4px}
+.hero__actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.btn-p{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;background:var(--green);color:#fff;
+  font-weight:600;font-size:.9rem;border-radius:3px;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
+}
+.btn-p:hover{background:var(--green-mid)}
+.btn-p:active{transform:scale(.98)}
+.btn-p svg{transition:transform .2s}
+.btn-p:hover svg{transform:translateX(3px)}
+.btn-g{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:12px 18px;background:transparent;color:var(--t2);
+  font-size:.9rem;font-weight:500;border:1px solid var(--border);border-radius:3px;
+  transition:border-color .2s,color .2s;cursor:pointer;
+}
+.btn-g:hover{border-color:#aaa;color:#111}
+.hero__tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{
+  font-size:.6875rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;
+  padding:5px 10px;border:1px solid var(--border);border-radius:2px;color:var(--t2);
+}
+
+/* ── SECTIONS ── */
+.sec{border-bottom:1px solid var(--border)}
+.sec-inner{padding:88px 0}
+.eyebrow{
+  font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green);
+  display:flex;align-items:center;gap:8px;margin-bottom:20px;
+}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--green)}
+.sec-h{
+  font-family:'DM Sans',sans-serif;font-weight:600;
+  font-size:clamp(1.875rem,3.2vw,2.75rem);
+  line-height:1.1;letter-spacing:-.03em;
+  text-wrap:balance;
+}
+.sec-h em{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-weight:400;letter-spacing:-.015em;color:var(--t2);
+}
+
+/* ── PROBLEM split layout ── */
+.problem-split{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+  margin-top:56px;
+}
+.problem-left p{font-size:1rem;color:var(--t2);line-height:1.7;margin-top:16px;max-width:380px}
+.problem-right{display:flex;flex-direction:column;gap:0}
+.p-item{
+  padding:28px 0;border-top:1px solid var(--border);
+  display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;
+}
+.p-item:last-child{border-bottom:1px solid var(--border)}
+.p-num{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:1.125rem;color:var(--t3);font-weight:400;margin-top:2px;
+}
+.p-item h3{font-size:.9375rem;font-weight:600;line-height:1.35;margin-bottom:6px;letter-spacing:-.01em}
+.p-item p{font-size:.875rem;color:var(--t2);line-height:1.6}
+
+/* ── CAPABILITIES accordion ── */
+.cap-accordion{margin-top:48px;border-top:1px solid var(--border)}
+.cap-row{border-bottom:1px solid var(--border)}
+.cap-trigger{
+  width:100%;display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+  padding:24px 0;background:none;border:none;cursor:pointer;text-align:left;
+}
+.cap-trigger:hover .cap-title{color:var(--green)}
+.cap-num2{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:1rem;color:var(--t3);min-width:28px;flex-shrink:0;
+}
+.cap-title{
+  flex:1;font-family:'DM Sans',sans-serif;font-weight:600;
+  font-size:1rem;letter-spacing:-.01em;color:#111;
+  transition:color .2s;
+}
+.cap-sub{font-size:.8125rem;color:var(--t3);flex-shrink:0;font-weight:500}
+.cap-plus{
+  width:20px;height:20px;flex-shrink:0;position:relative;
+}
+.cap-plus::before,.cap-plus::after{
+  content:'';position:absolute;background:var(--t3);border-radius:1px;
+  transition:transform .25s cubic-bezier(.4,0,.2,1),opacity .25s;
+}
+.cap-plus::before{width:10px;height:1.5px;top:9px;left:5px}
+.cap-plus::after{width:1.5px;height:10px;top:5px;left:9px}
+.cap-row.open .cap-plus::after{transform:rotate(90deg);opacity:0}
+.cap-row.open .cap-title{color:var(--green)}
+.cap-panel{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1)}
+.cap-row.open .cap-panel{max-height:400px}
+.cap-content{
+  display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;
+  padding:0 0 28px 44px;
+}
+.cap-content p{font-size:.9rem;color:var(--t2);line-height:1.65;grid-column:1/-1}
+.cap-list{display:flex;flex-direction:column;gap:5px}
+.cap-list li{
+  font-size:.8125rem;color:var(--t2);padding-left:14px;position:relative;
+}
+.cap-list li::before{content:'—';position:absolute;left:0;color:var(--border);font-size:.75rem}
+
+/* ── APPROACH timeline ── */
+.approach-list{margin-top:64px}
+.a-step{
+  display:grid;grid-template-columns:96px 1fr 1fr;gap:0 48px;
+  padding:48px 0;border-top:1px solid var(--border);
+}
+.a-step:last-child{border-bottom:1px solid var(--border)}
+.a-n{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:3.5rem;font-weight:300;line-height:1;
+  color:var(--border);letter-spacing:-.04em;
+  padding-top:4px;
+}
+.a-left h3{
+  font-family:'DM Sans',sans-serif;font-weight:600;
+  font-size:1.0625rem;letter-spacing:-.015em;line-height:1.3;
+  margin-bottom:12px;
+}
+.a-left p{font-size:.9rem;color:var(--t2);line-height:1.65}
+.a-list{display:flex;flex-direction:column;gap:6px;padding-top:4px}
+.a-list li{
+  font-size:.8125rem;color:var(--t2);padding-left:14px;position:relative;
+}
+.a-list li::before{
+  content:'·';position:absolute;left:4px;
+  color:var(--green);font-size:1rem;line-height:1.35;
+}
+
+/* ── METRICS ── */
+.metrics-bar{
+  background:#fff;padding:72px 0;border-bottom:1px solid var(--border);
+}
+.metrics-inner{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-left:1px solid var(--border);
+}
+.m-item{
+  padding:0 40px;text-align:center;
+  border-right:1px solid var(--border);
+}
+.m-val{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:clamp(2.5rem,4vw,3.75rem);
+  letter-spacing:-.04em;color:#111;
+  display:block;line-height:1;margin-bottom:10px;
+}
+.m-label{font-size:.8125rem;color:var(--t2);font-weight:500;line-height:1.4}
+
+/* ── INTEGRATION ── */
+.int-inner{
+  padding:88px 0;
+  display:grid;grid-template-columns:5fr 4fr;gap:96px;align-items:center;
+}
+.int-inner .eyebrow{margin-bottom:16px}
+.int-inner .sec-h{margin-bottom:16px}
+.int-desc{font-size:1rem;color:var(--t2);line-height:1.7;margin-bottom:28px}
+.checklist{display:flex;flex-direction:column;gap:11px}
+.checklist li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:.9rem;color:var(--t2);
+}
+.checklist li::before{
+  content:'✓';flex-shrink:0;
+  font-size:.75rem;font-weight:600;color:var(--green);
+  width:18px;height:18px;border:1px solid var(--green);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:2px;font-size:.65rem;
+}
+.terminal{
+  background:#0F1912;border-radius:6px;
+  overflow:hidden;border:1px solid rgba(255,255,255,.05);
+}
+.t-bar{
+  display:flex;align-items:center;gap:6px;
+  padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.05);
+}
+.t-dot{width:9px;height:9px;border-radius:50%}
+.t-dot:nth-child(1){background:#FF5F57}
+.t-dot:nth-child(2){background:#FFBD2E}
+.t-dot:nth-child(3){background:#28CA41}
+.t-title{font-size:.7rem;color:rgba(255,255,255,.25);margin-left:6px;font-weight:500}
+.t-body{padding:18px 18px 22px;display:flex;flex-direction:column;gap:2px}
+.t-line{font-size:.8125rem;font-family:'Courier New',monospace;line-height:1.75;color:rgba(255,255,255,.35)}
+.t-ok{color:#4ADE80}
+.t-cur{display:inline-block;width:7px;height:13px;background:#4ADE80;vertical-align:middle;animation:blink 1.1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* ── WHY 2-col text ── */
+.why-cols{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  margin-top:48px;border-top:1px solid var(--border);
+}
+.why-item{
+  padding:36px 40px 36px 0;border-bottom:1px solid var(--border);
+}
+.why-item:nth-child(even){padding-left:40px;padding-right:0;border-left:1px solid var(--border)}
+.why-item h3{
+  font-size:.9375rem;font-weight:600;letter-spacing:-.01em;
+  line-height:1.35;margin-bottom:8px;
+}
+.why-item p{font-size:.875rem;color:var(--t2);line-height:1.65}
+
+/* ── FAQ ── */
+.faq-inner{padding:88px 0}
+.faq-layout{
+  display:grid;grid-template-columns:320px 1fr;gap:80px;
+  margin-top:56px;align-items:start;
+}
+.faq-sidebar p{font-size:.9rem;color:var(--t2);line-height:1.65;margin-top:12px}
+.faq-sidebar a{color:var(--green);font-weight:500}
+.acc-item{border-top:1px solid var(--border)}
+.acc-item:last-child{border-bottom:1px solid var(--border)}
+.acc-btn{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px 0;background:none;border:none;cursor:pointer;text-align:left;
+  font-size:.9rem;font-weight:600;color:#111;
+  transition:color .2s;
+}
+.acc-btn:hover{color:var(--green)}
+.acc-icon{width:16px;height:16px;flex-shrink:0;position:relative}
+.acc-icon::before,.acc-icon::after{
+  content:'';position:absolute;background:var(--t2);border-radius:1px;
+  transition:transform .25s,opacity .25s;
+}
+.acc-icon::before{width:10px;height:1.5px;top:7px;left:3px}
+.acc-icon::after{width:1.5px;height:10px;top:3px;left:7px}
+.acc-item.open .acc-icon::after{transform:rotate(90deg);opacity:0}
+.acc-panel{max-height:0;overflow:hidden;transition:max-height .3s cubic-bezier(.4,0,.2,1)}
+.acc-item.open .acc-panel{max-height:240px}
+.acc-panel p{font-size:.875rem;color:var(--t2);line-height:1.65;padding-bottom:18px}
+
+/* ── SECURITY ── */
+.security{background:#FAFAF8}
+.security-inner{padding:88px 0}
+.security-header{margin-bottom:48px;max-width:640px}
+.security-header .sec-h{margin-bottom:12px}
+.security-header p{font-size:.9375rem;color:var(--t2);line-height:1.65;margin-top:12px}
+.security-note{font-size:.8125rem;color:var(--t3);margin-top:8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 14px;background:#fff;
+  border:1px solid var(--border);border-radius:3px;
+  font-size:.8125rem;font-weight:500;color:var(--t2);
+}
+.badge svg{color:var(--green);flex-shrink:0}
+
+/* ── CONTACT ── */
+.contact-inner{
+  padding:96px 0;
+  display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start;
+}
+.contact-left .sec-h{margin-bottom:16px}
+.contact-left p{font-size:1rem;color:var(--t2);line-height:1.7}
+.form{display:flex;flex-direction:column;gap:18px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg label{font-size:.8125rem;font-weight:600;color:#111}
+.fg input,.fg select,.fg textarea{
+  padding:10px 13px;background:#fff;
+  border:1px solid var(--border);border-radius:3px;
+  font-family:'DM Sans',sans-serif;font-size:.9rem;color:#111;
+  transition:border-color .2s,box-shadow .2s;outline:none;width:100%;
+}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--t3)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:var(--green);
+  box-shadow:0 0 0 3px var(--green-pale);
+}
+.fg textarea{resize:vertical}
+.btn-sub{
+  padding:13px 24px;background:var(--green);color:#fff;
+  border:none;border-radius:3px;
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9375rem;
+  cursor:pointer;transition:background .2s,transform .15s;text-align:center;
+}
+.btn-sub:hover{background:var(--green-mid)}
+.btn-sub:active{transform:scale(.99)}
+.form-success{
+  display:none;font-size:.875rem;color:var(--green);
+  padding:12px 16px;background:var(--green-pale);
+  border:1px solid var(--green);border-radius:3px;line-height:1.5;
+}
+.form-success.is-visible{display:block}
+
+/* ── LOGOS ── */
+.logos-sec{background:#FAFAF8}
+.logos-inner{padding:72px 0}
+.logos-header{margin-bottom:40px}
+.logos-header p{font-size:.9rem;color:var(--t2);margin-top:8px;max-width:440px}
+.logos-row{display:flex;align-items:center;border-top:1px solid var(--border)}
+.logos-row:last-child{border-bottom:1px solid var(--border)}
+.logos-label{
+  font-size:.625rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--t3);min-width:80px;padding:18px 0;border-right:1px solid var(--border);flex-shrink:0;
+}
+.logos-track-wrap{overflow:hidden;flex:1;padding-left:20px}
+.logos-track{
+  display:flex;align-items:center;gap:28px;
+  width:max-content;animation:slide 36s linear infinite;
+}
+.logos-track--rev{animation-direction:reverse}
+.logos-track img{width:22px;height:22px;object-fit:contain;opacity:.4;filter:grayscale(1);transition:opacity .2s,filter .2s}
+.logos-track img:hover{opacity:.75;filter:grayscale(0)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── FOOTER ── */
+.footer{padding:44px 0 32px;border-top:1px solid var(--border)}
+.footer-main{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-bottom:28px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:16px;
+}
+.footer-logo{
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;
+  display:flex;align-items:center;gap:8px;
+}
+.footer-nav{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.footer-nav a{font-size:.8125rem;color:var(--t2);font-weight:500;transition:color .2s}
+.footer-nav a:hover{color:#111}
+.footer-social{display:flex;align-items:center;gap:14px}
+.footer-social a{color:var(--t3);transition:color .2s}
+.footer-social a:hover{color:#111}
+.footer-bottom{padding-top:22px;display:flex;flex-direction:column;gap:5px}
+.footer-bottom p{font-size:.8125rem;color:var(--t3);line-height:1.5}
+
+/* ── REVEAL ── */
+.rev{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.rev.in{opacity:1;transform:translateY(0)}
+
+/* ── COOKIE BANNER ── */
+.cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:150;
+  background:#fff;border-top:1px solid var(--border);
+  padding:16px 0;
+  transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);
+}
+.cookie-banner.is-visible{transform:translateY(0)}
+.cookie-banner__inner{
+  max-width:1280px;margin:0 auto;padding:0 48px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  flex-wrap:wrap;
+}
+.cookie-banner__text{font-size:.8125rem;color:var(--t2);line-height:1.5}
+.cookie-banner__text a{color:var(--green);font-weight:500}
+.cookie-banner__actions{display:flex;gap:8px;flex-shrink:0}
+.btn-cookie{
+  font-size:.8125rem;font-weight:600;padding:7px 16px;border-radius:3px;
+  border:1px solid var(--border);background:transparent;color:var(--t2);cursor:pointer;
+  transition:border-color .2s,color .2s;
+}
+.btn-cookie:hover{border-color:#aaa;color:#111}
+.btn-cookie--primary{background:var(--green);color:#fff;border-color:var(--green)}
+.btn-cookie--primary:hover{background:var(--green-mid);border-color:var(--green-mid);color:#fff}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero__split{grid-template-columns:1fr;gap:40px}
+  .problem-split{grid-template-columns:1fr;gap:40px}
+  .cap-content{grid-template-columns:1fr}
+  .a-step{grid-template-columns:64px 1fr;gap:24px}
+  .a-step .a-right{display:none}
+  .why-cols{grid-template-columns:1fr}
+  .why-item:nth-child(even){padding-left:0;border-left:none}
+  .faq-layout{grid-template-columns:1fr;gap:36px}
+  .int-inner{grid-template-columns:1fr;gap:48px}
+  .contact-inner{grid-template-columns:1fr;gap:48px}
+  .metrics-inner{grid-template-columns:1fr 1fr}
+  .m-item{border-bottom:1px solid var(--border)}
+}
+@media(max-width:600px){
+  .nav__links{display:none}
+  .nav__i{padding:0 20px}
+  .hero{padding:112px 0 72px}
+  .sec-inner,.faq-inner,.security-inner,.logos-inner,.int-inner,.contact-inner{padding:64px 0}
+  .metrics-inner{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .a-step{grid-template-columns:48px 1fr}
+  .a-n{font-size:2.5rem}
+  .cookie-banner__inner{padding:0 20px}
+}
+  </style>
 </head>
-<body class="splash-active">
+<body>
 
-  <!-- Splash screen -->
-  <div class="splash" id="splash" aria-hidden="true">
-    <div class="splash__logo">
-      <svg class="splash__mark" viewBox="10 10 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="mark-diamond" d="M18.4404 12.7734L19.8037 15.6074L18.4404 18.4404L15.6074 19.8037L12.7734 18.4404L11.4102 15.6074L12.7734 12.7734L15.6074 11.4102L18.4404 12.7734Z" stroke="#C4FB50" stroke-width="0.74"/>
-        <path class="mark-inner" d="M16.2533 17.0631L16.2513 17.0631L14.9591 17.0628C14.8815 17.0641 14.783 17.0732 14.7003 17.0622L14.6964 17.0622L14.6964 17.0612C14.6526 17.0533 14.6151 17.0396 14.5854 17.024L14.5183 16.9792L14.5163 16.9773L12.115 14.9167L11.9208 14.75L12.1767 14.7497L13.8498 14.7496C13.8695 14.7493 13.8909 14.7487 13.9123 14.7486C14.0213 14.7482 14.1573 14.7644 14.2636 14.8493L14.2695 14.8541L15.5926 16.0816L16.8744 14.8553L16.8782 14.8514C16.9759 14.768 17.1029 14.7493 17.2057 14.7493L17.2926 14.7498L18.9657 14.7498L19.2167 14.7496L19.028 14.9158L16.6913 16.9758L16.6904 16.9768C16.6531 17.0086 16.5896 17.0449 16.5013 17.0619L16.5003 17.062C16.4564 17.0701 16.4114 17.0687 16.3725 17.067C16.3306 17.0651 16.2941 17.0624 16.2533 17.0631Z" fill="#C4FB50"/>
+<!-- top accent bar -->
+<div class="topbar"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav__i">
+    <a href="#" class="nav__logo">
+      <svg width="20" height="20" viewBox="10 10 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.4404 12.7734L19.8037 15.6074L18.4404 18.4404L15.6074 19.8037L12.7734 18.4404L11.4102 15.6074L12.7734 12.7734L15.6074 11.4102L18.4404 12.7734Z" stroke="#0D5C38" stroke-width="0.9"/>
+        <path d="M16.2533 17.0631L14.9591 17.0628C14.8815 17.0641 14.783 17.0732 14.7003 17.0622L14.6964 17.0612C14.6526 17.0533 14.6151 17.0396 14.5854 17.024L14.5183 16.9792L12.115 14.9167L11.9208 14.75L12.1767 14.7497L13.8498 14.7496C14.0213 14.7482 14.1573 14.7644 14.2636 14.8493L15.5926 16.0816L16.8744 14.8553C16.9759 14.768 17.1029 14.7493 17.2057 14.7493L18.9657 14.7498L19.2167 14.7496L19.028 14.9158L16.6913 16.9758C16.6531 17.0086 16.5896 17.0449 16.5013 17.0619C16.4564 17.0701 16.3306 17.0651 16.2533 17.0631Z" fill="#0D5C38"/>
       </svg>
-      <span class="splash__wordmark">Vrikalytics</span>
-    </div>
+      Vrikalytics
+    </a>
+    <nav class="nav__links">
+      <a href="#expertise">Expertise</a>
+      <a href="#capabilities">What We Build</a>
+      <a href="#approach">How We Work</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#contact" class="nav__cta">Discuss Your Project</a>
   </div>
+</nav>
 
-  <!-- Scroll progress -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <!-- Navbar -->
-  <header class="navbar" id="navbar">
-    <div class="container navbar__inner">
-      <a href="#home" class="navbar__logo">
-        <svg class="navbar__mark" viewBox="10 10 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.4404 12.7734L19.8037 15.6074L18.4404 18.4404L15.6074 19.8037L12.7734 18.4404L11.4102 15.6074L12.7734 12.7734L15.6074 11.4102L18.4404 12.7734Z" stroke="#C4FB50" stroke-width="0.74"/><path d="M16.2533 17.0631L16.2513 17.0631L14.9591 17.0628C14.8815 17.0641 14.783 17.0732 14.7003 17.0622L14.6964 17.0622L14.6964 17.0612C14.6526 17.0533 14.6151 17.0396 14.5854 17.024L14.5183 16.9792L14.5163 16.9773L12.115 14.9167L11.9208 14.75L12.1767 14.7497L13.8498 14.7496C13.8695 14.7493 13.8909 14.7487 13.9123 14.7486C14.0213 14.7482 14.1573 14.7644 14.2636 14.8493L14.2695 14.8541L15.5926 16.0816L16.8744 14.8553L16.8782 14.8514C16.9759 14.768 17.1029 14.7493 17.2057 14.7493L17.2926 14.7498L18.9657 14.7498L19.2167 14.7496L19.028 14.9158L16.6913 16.9758L16.6904 16.9768C16.6531 17.0086 16.5896 17.0449 16.5013 17.0619L16.5003 17.062C16.4564 17.0701 16.4114 17.0687 16.3725 17.067C16.3306 17.0651 16.2941 17.0624 16.2533 17.0631Z" fill="#C4FB50"/></svg>
-        Vrikalytics
-      </a>
-
-      <nav class="navbar__nav" id="navMenu">
-        <a href="#expertise">Expertise</a>
-        <a href="#capabilities">What We Build</a>
-        <a href="#approach">How We Work</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="navbar__actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light mode">
-          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <a href="#contact" class="btn btn--primary btn--sm">Discuss Your Project</a>
-        <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="container">
-
-        <h1 class="hero__headline">
-          Payment infrastructure<br>
-          built for your operation,<br>
-          <span class="text-lime">not a template.</span>
-        </h1>
-
-        <p class="hero__sub" data-reveal data-reveal-delay="1">
-          We build payment switches, mandate engines, risk systems, and reconciliation platforms — designed around how your institution actually operates, not how a generic product assumes it does.
-        </p>
-
-        <div class="hero__actions" data-reveal data-reveal-delay="2">
-          <a href="#contact" class="btn btn--primary btn--lg">
+<!-- HERO -->
+<section class="hero">
+  <div class="w">
+    <div class="hero__label rev">Payment Infrastructure Engineering</div>
+    <h1 class="hero__h rev">
+      Payment infrastructure built for<br>your operation, <em>not a template.</em>
+    </h1>
+    <div class="hero__split rev">
+      <p class="hero__sub">We build payment switches, mandate engines, risk systems, and reconciliation platforms — designed around how your institution actually operates, not how a generic product assumes it does.</p>
+      <div class="hero__right">
+        <div class="hero__actions">
+          <a href="#contact" class="btn-p">
             Discuss Your Project
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#capabilities" class="btn btn--ghost btn--lg">Explore Our Expertise</a>
+          <a href="#capabilities" class="btn-g">Explore expertise</a>
         </div>
-
-      </div>
-
-      <!-- Benefit strip -->
-      <div class="hero__strip" aria-hidden="true">
-        <div class="hero__strip-track">
-          <span class="hero__strip-item">UPI Switch Technology</span>
-          <span class="hero__strip-item">Mandate Systems</span>
-          <span class="hero__strip-item">Risk Engines</span>
-          <span class="hero__strip-item">Reconciliation</span>
-          <span class="hero__strip-item">Verification Infrastructure</span>
-          <span class="hero__strip-item">Payment Operations</span>
-          <span class="hero__strip-item">Bank Integrations</span>
-          <span class="hero__strip-item">Financial Ledgers</span>
-          <span class="hero__strip-item">Payout Orchestration</span>
-          <span class="hero__strip-item">Compliance Engineering</span>
-          <span class="hero__strip-item">UPI Switch Technology</span>
-          <span class="hero__strip-item">Mandate Systems</span>
-          <span class="hero__strip-item">Risk Engines</span>
-          <span class="hero__strip-item">Reconciliation</span>
-          <span class="hero__strip-item">Verification Infrastructure</span>
-          <span class="hero__strip-item">Payment Operations</span>
-          <span class="hero__strip-item">Bank Integrations</span>
-          <span class="hero__strip-item">Financial Ledgers</span>
-          <span class="hero__strip-item">Payout Orchestration</span>
-          <span class="hero__strip-item">Compliance Engineering</span>
+        <div class="hero__tags">
+          <span class="tag">UPI Switches</span>
+          <span class="tag">Mandate Systems</span>
+          <span class="tag">Risk Engines</span>
+          <span class="tag">Reconciliation</span>
+          <span class="tag">Payout Orchestration</span>
+          <span class="tag">Compliance</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="hero__scroll" aria-hidden="true">
-        <span>scroll</span>
+<!-- PROBLEM -->
+<section class="sec" id="expertise">
+  <div class="w sec-inner">
+    <div class="rev">
+      <p class="eyebrow">Why generic platforms fall short.</p>
+      <h2 class="sec-h">The gaps that show up<br><em>after you go live.</em></h2>
+    </div>
+    <div class="problem-split">
+      <div class="problem-left rev">
+        <p>Banks and fintechs discover that off-the-shelf payment infrastructure doesn't account for the operational complexity of regulated financial businesses.</p>
       </div>
-    </section>
-
-    <!-- Ecosystem Expertise -->
-    <section class="trust section--dim" id="expertise">
-      <div class="container">
-        <div class="trust__header" data-reveal>
-          <p class="section-label">Built around the financial ecosystem.</p>
-          <p class="trust__desc">We develop technology that works across complex financial environments, connecting internal systems with banks, payment networks, verification providers, and regulated ecosystem participants.</p>
-        </div>
-        <div class="trust__row">
-          <p class="trust__label">Payment</p>
-          <div class="trust__marquee">
-            <div class="trust__track">
-              <span>UPI</span><span class="trust__sep">·</span>
-              <span>IMPS</span><span class="trust__sep">·</span>
-              <span>NEFT</span><span class="trust__sep">·</span>
-              <span>RTGS</span><span class="trust__sep">·</span>
-              <span>NACH</span><span class="trust__sep">·</span>
-              <span>UPI AutoPay</span><span class="trust__sep">·</span>
-              <span>eNACH</span><span class="trust__sep">·</span>
-              <span>AePS</span><span class="trust__sep">·</span>
-              <span aria-hidden="true">UPI</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">IMPS</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">NEFT</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">RTGS</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">NACH</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">UPI AutoPay</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">eNACH</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">AePS</span><span class="trust__sep" aria-hidden="true">·</span>
-            </div>
-          </div>
-        </div>
-        <div class="trust__row">
-          <p class="trust__label">Institutions</p>
-          <div class="trust__marquee">
-            <div class="trust__track trust__track--reverse">
-              <span>Banks</span><span class="trust__sep">·</span>
-              <span>NBFCs</span><span class="trust__sep">·</span>
-              <span>Fintechs</span><span class="trust__sep">·</span>
-              <span>Insurers</span><span class="trust__sep">·</span>
-              <span>Lenders</span><span class="trust__sep">·</span>
-              <span>Wealth Platforms</span><span class="trust__sep">·</span>
-              <span>Payment Companies</span><span class="trust__sep">·</span>
-              <span>Regulated Businesses</span><span class="trust__sep">·</span>
-              <span aria-hidden="true">Banks</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">NBFCs</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">Fintechs</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">Insurers</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">Lenders</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">Wealth Platforms</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">Payment Companies</span><span class="trust__sep" aria-hidden="true">·</span>
-              <span aria-hidden="true">Regulated Businesses</span><span class="trust__sep" aria-hidden="true">·</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- The Problem -->
-    <section class="problem" id="solutions">
-      <div class="container">
-        <header class="section-header" data-reveal>
-          <p class="section-label">Why generic platforms fall short.</p>
-          <h2>The gaps that show up<br>after you go live.</h2>
-        </header>
-        <div class="problem__grid hairline-grid">
-          <div class="problem-card grid-cell" data-reveal data-reveal-delay="0">
-            <span class="problem-card__num">001</span>
+      <div class="problem-right rev">
+        <div class="p-item">
+          <span class="p-num">01</span>
+          <div>
             <h3>A payment doesn't end when it's submitted</h3>
             <p>It needs routing, state tracking, reversal handling, settlement, and a full dispute trail. Most integrations handle the happy path. The edge cases are what break operations at 2am.</p>
           </div>
-          <div class="problem-card grid-cell" data-reveal data-reveal-delay="1">
-            <span class="problem-card__num">002</span>
+        </div>
+        <div class="p-item">
+          <span class="p-num">02</span>
+          <div>
             <h3>Your approval flows aren't what the platform assumed</h3>
             <p>Banks have maker-checker requirements, internal signing hierarchies, and controls that no off-the-shelf product was built for. You end up working around the tool rather than with it.</p>
           </div>
-          <div class="problem-card grid-cell" data-reveal data-reveal-delay="2">
-            <span class="problem-card__num">003</span>
+        </div>
+        <div class="p-item">
+          <span class="p-num">03</span>
+          <div>
             <h3>Five banks, three providers, two ledgers — each behaves differently</h3>
             <p>Every integration has its own protocol, timeout behaviour, and failure mode. Without a proper orchestration layer, that inconsistency spreads through your product and your operations team.</p>
           </div>
-          <div class="problem-card grid-cell" data-reveal data-reveal-delay="3">
-            <span class="problem-card__num">004</span>
+        </div>
+        <div class="p-item">
+          <span class="p-num">04</span>
+          <div>
             <h3>Audit trails aren't something you can retrofit</h3>
             <p>When regulators ask for transaction records or a reconciliation breaks at month-end, the answer depends on decisions made at design time — not something you can bolt on later.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- What we build (6-card capabilities) -->
-    <section class="capabilities section--dim" id="capabilities">
-      <div class="container">
-        <header class="section-header" data-reveal>
-          <p class="section-label">What we build.</p>
-          <h2>The custom layer financial<br>products are built on.</h2>
-          <p class="section-header__sub">From transaction switching to back-office operations — we develop financial infrastructure around your business model, your banking relationships, and your regulatory responsibilities. Not a generic configuration menu.</p>
-        </header>
-        <div class="cap-grid hairline-grid">
-          <div class="cap-card grid-cell" data-reveal data-reveal-delay="0">
-            <span class="cap-num">01</span>
-            <h3>Payment Switch Technology</h3>
-            <p class="cap-card__label">Engineer every transaction flow.</p>
+<!-- CAPABILITIES accordion -->
+<section class="sec" id="capabilities" style="background:#FAFAF8">
+  <div class="w sec-inner">
+    <div class="rev">
+      <p class="eyebrow">What we build.</p>
+      <h2 class="sec-h">The custom layer financial<br>products are built on.</h2>
+    </div>
+    <div class="cap-accordion rev">
+      <div class="cap-row open">
+        <button class="cap-trigger">
+          <span class="cap-num2">01</span>
+          <span class="cap-title">Payment Switch Technology</span>
+          <span class="cap-sub">Transaction switching &amp; routing</span>
+          <span class="cap-plus"></span>
+        </button>
+        <div class="cap-panel">
+          <div class="cap-content">
             <p>Switching and orchestration technology for authorized payment participants — managing routing, lifecycle states, integrations, reversals, disputes, and operational monitoring.</p>
-            <ul class="cap-card__list">
+            <ul class="cap-list">
               <li>UPI payment and collect flows</li>
               <li>QR and intent-based journeys</li>
               <li>Bank and PSP integrations</li>
+            </ul>
+            <ul class="cap-list">
               <li>Transaction routing and reversals</li>
               <li>Dispute workflows</li>
               <li>Transaction monitoring</li>
             </ul>
           </div>
-          <div class="cap-card grid-cell" data-reveal data-reveal-delay="1">
-            <span class="cap-num">02</span>
-            <h3>Mandate and Recurring Payments</h3>
-            <p class="cap-card__label">Manage the complete mandate lifecycle.</p>
+        </div>
+      </div>
+      <div class="cap-row">
+        <button class="cap-trigger">
+          <span class="cap-num2">02</span>
+          <span class="cap-title">Mandate and Recurring Payments</span>
+          <span class="cap-sub">eNACH &amp; UPI AutoPay</span>
+          <span class="cap-plus"></span>
+        </button>
+        <div class="cap-panel">
+          <div class="cap-content">
             <p>Recurring-payment infrastructure supporting eNACH, UPI AutoPay, and other mandate integrations — from registration and presentation to retries, reconciliation, and closure.</p>
-            <ul class="cap-card__list">
+            <ul class="cap-list">
               <li>Mandate registration and authentication</li>
               <li>Amendments, pause, revoke, cancel</li>
               <li>Pre-debit notifications</li>
+            </ul>
+            <ul class="cap-list">
               <li>Debit presentation and retries</li>
               <li>Return-code processing</li>
               <li>Mandate reconciliation</li>
             </ul>
           </div>
-          <div class="cap-card grid-cell" data-reveal data-reveal-delay="2">
-            <span class="cap-num">03</span>
-            <h3>Payout Orchestration</h3>
-            <p class="cap-card__label">Bring multiple banks under one operating layer.</p>
+        </div>
+      </div>
+      <div class="cap-row">
+        <button class="cap-trigger">
+          <span class="cap-num2">03</span>
+          <span class="cap-title">Payout Orchestration</span>
+          <span class="cap-sub">Multi-bank &amp; multi-rail</span>
+          <span class="cap-plus"></span>
+        </button>
+        <div class="cap-panel">
+          <div class="cap-content">
             <p>Custom payout infrastructure for organizations that require control over bank integrations, routing policies, approvals, transaction states, retries, and reconciliation.</p>
-            <ul class="cap-card__list">
+            <ul class="cap-list">
               <li>Multi-bank integration</li>
               <li>UPI, IMPS, NEFT, and RTGS workflows</li>
               <li>Configurable routing and approvals</li>
+            </ul>
+            <ul class="cap-list">
               <li>Bulk and scheduled payouts</li>
               <li>Duplicate-payment prevention</li>
               <li>Ledger and reconciliation integration</li>
             </ul>
           </div>
-          <div class="cap-card grid-cell" data-reveal data-reveal-delay="3">
-            <span class="cap-num">04</span>
-            <h3>Verification Infrastructure</h3>
-            <p class="cap-card__label">Build verification into every customer journey.</p>
+        </div>
+      </div>
+      <div class="cap-row">
+        <button class="cap-trigger">
+          <span class="cap-num2">04</span>
+          <span class="cap-title">Verification Infrastructure</span>
+          <span class="cap-sub">KYC &amp; account validation</span>
+          <span class="cap-plus"></span>
+        </button>
+        <div class="cap-panel">
+          <div class="cap-content">
             <p>Configurable verification systems for individuals, businesses, documents, and bank accounts — incorporated into onboarding, transaction, and risk workflows.</p>
-            <ul class="cap-card__list">
+            <ul class="cap-list">
               <li>Customer and business verification</li>
               <li>Bank-account and UPI validation</li>
               <li>Document extraction and validation</li>
+            </ul>
+            <ul class="cap-list">
               <li>Provider orchestration</li>
               <li>Duplicate detection</li>
               <li>Verification audit trails</li>
             </ul>
           </div>
-          <div class="cap-card grid-cell" data-reveal data-reveal-delay="4">
-            <span class="cap-num">05</span>
-            <h3>Risk Management Systems</h3>
-            <p class="cap-card__label">Convert risk policies into real-time controls.</p>
+        </div>
+      </div>
+      <div class="cap-row">
+        <button class="cap-trigger">
+          <span class="cap-num2">05</span>
+          <span class="cap-title">Risk Management Systems</span>
+          <span class="cap-sub">Real-time rules &amp; scoring</span>
+          <span class="cap-plus"></span>
+        </button>
+        <div class="cap-panel">
+          <div class="cap-content">
             <p>Risk engines that evaluate transactions, users, beneficiaries, devices, and behavioural signals against configurable business and compliance policies.</p>
-            <ul class="cap-card__list">
+            <ul class="cap-list">
               <li>Configurable rules engine</li>
               <li>Real-time risk scoring</li>
               <li>Amount and velocity controls</li>
+            </ul>
+            <ul class="cap-list">
               <li>Behavioural and beneficiary checks</li>
               <li>Allow, hold, review, or decline</li>
               <li>Case management and audit history</li>
             </ul>
           </div>
-          <div class="cap-card grid-cell" data-reveal data-reveal-delay="5">
-            <span class="cap-num">06</span>
-            <h3>Reconciliation and Payment Operations</h3>
-            <p class="cap-card__label">Account for every transaction.</p>
+        </div>
+      </div>
+      <div class="cap-row">
+        <button class="cap-trigger">
+          <span class="cap-num2">06</span>
+          <span class="cap-title">Reconciliation and Payment Operations</span>
+          <span class="cap-sub">Settlement &amp; exception management</span>
+          <span class="cap-plus"></span>
+        </button>
+        <div class="cap-panel">
+          <div class="cap-content">
             <p>Reconciliation and operations platforms that match records across banks, payment networks, internal systems, and ledgers while helping teams investigate exceptions.</p>
-            <ul class="cap-card__list">
+            <ul class="cap-list">
               <li>Multi-source data ingestion</li>
               <li>Configurable matching rules</li>
               <li>Settlement and fee reconciliation</li>
+            </ul>
+            <ul class="cap-list">
               <li>Exception and dispute workflows</li>
               <li>Finance and operations reports</li>
               <li>Complete action histories</li>
@@ -306,528 +746,455 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Partners / Institutions -->
-    <section class="logos" id="partners">
-      <div class="container">
-        <div class="logos__header" data-reveal>
-          <p class="section-label">Ecosystem partners.</p>
-          <p class="logos__desc">Banks, small finance banks, payment banks, and payment gateways we have worked with across India.</p>
-        </div>
-        <div class="logos__row">
-          <p class="logos__label">Banks</p>
-          <div class="logos__marquee">
-            <div class="logos__track">
-              <span class="logos__item"><img src="https://img.logo.dev/aubank.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="AU Small Finance Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/idfcfirstbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="IDFC FIRST Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/ujjivansfb.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Ujjivan Small Finance Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/equitasbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Equitas Small Finance Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/airtelpaymentsbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Airtel Payments Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/yesbank.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Yes Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/canarabank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Canara Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/kvb.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Karur Vysya Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/cityunionbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="City Union Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/axisbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Axis Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/southindianbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="South Indian Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/csb.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="CSB Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/janabank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Jana Small Finance Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/unitybank.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Unity Small Finance Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/rblbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="RBL Bank" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/aubank.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/idfcfirstbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/ujjivansfb.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/equitasbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/airtelpaymentsbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/yesbank.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/canarabank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/kvb.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/cityunionbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/axisbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/southindianbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/csb.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/janabank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/unitybank.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/rblbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-            </div>
-          </div>
-        </div>
-        <div class="logos__row">
-          <p class="logos__label">Gateways</p>
-          <div class="logos__marquee">
-            <div class="logos__track logos__track--reverse">
-              <span class="logos__item"><img src="https://img.logo.dev/razorpay.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Razorpay" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/payu.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="PayU" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/cashfree.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Cashfree Payments" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/easebuzz.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Easebuzz" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/ccavenue.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="CCAvenue" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/gokwik.co?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="GoKwik" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/phonepe.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="PhonePe" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item"><img src="https://img.logo.dev/sabpaisa.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="SabPaisa" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/razorpay.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/payu.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/cashfree.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/easebuzz.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/ccavenue.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/gokwik.co?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/phonepe.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/razorpay.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/payu.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/cashfree.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/easebuzz.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/ccavenue.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/gokwik.co?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/phonepe.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-              <span class="logos__item" aria-hidden="true"><img src="https://img.logo.dev/sabpaisa.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none'"></span>
-            </div>
-          </div>
+<!-- LOGOS -->
+<section class="logos-sec sec" id="partners">
+  <div class="w logos-inner">
+    <div class="logos-header rev">
+      <p class="eyebrow">Ecosystem partners.</p>
+      <p>Banks, small finance banks, payment banks, and gateways we have worked with across India.</p>
+    </div>
+    <div class="logos-row">
+      <p class="logos-label">Banks</p>
+      <div class="logos-track-wrap">
+        <div class="logos-track">
+          <img src="https://img.logo.dev/aubank.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="AU Small Finance Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/idfcfirstbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="IDFC FIRST Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/ujjivansfb.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Ujjivan Small Finance Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/equitasbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Equitas Small Finance Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/airtelpaymentsbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Airtel Payments Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/yesbank.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Yes Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/canarabank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Canara Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/kvb.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Karur Vysya Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/cityunionbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="City Union Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/axisbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Axis Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/southindianbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="South Indian Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/csb.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="CSB Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/janabank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Jana Small Finance Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/unitybank.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Unity Small Finance Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/rblbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="RBL Bank" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <!-- duplicates for seamless loop -->
+          <img src="https://img.logo.dev/aubank.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/idfcfirstbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/ujjivansfb.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/equitasbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/airtelpaymentsbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/yesbank.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/canarabank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/kvb.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/cityunionbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/axisbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/southindianbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/csb.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/janabank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/unitybank.co.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/rblbank.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
         </div>
       </div>
-    </section>
-
-    <!-- How we work (approach) -->
-    <section class="approach" id="approach">
-      <div class="container">
-        <header class="section-header" data-reveal>
-          <p class="section-label">How we work.</p>
-          <h2>Discovery to production—<br>without the shortcuts.</h2>
-        </header>
-        <div class="approach__grid approach__grid--4 hairline-grid">
-          <div class="approach-step grid-cell" data-reveal data-reveal-delay="0">
-            <span class="approach-step__num">01</span>
-            <h3>Map the operation first</h3>
-            <p>We start with how your business actually runs — transaction flows, partner relationships, approval processes, risk policies, accounting requirements, regulatory obligations. Architecture comes after we understand what we're building for.</p>
-            <ul class="approach-step__list">
-              <li>Requirement and workflow mapping</li>
-              <li>Existing-system assessment</li>
-              <li>Integration inventory</li>
-              <li>Risk and control requirements</li>
-              <li>Recommended architecture</li>
-              <li>Delivery roadmap</li>
-            </ul>
-          </div>
-          <div class="approach-step grid-cell" data-reveal data-reveal-delay="1">
-            <span class="approach-step__num">02</span>
-            <h3>Build with the full picture</h3>
-            <p>We convert operational requirements into systems with clear boundaries, configurable rules, and failure handling that's part of the design — not an afterthought. Delivery runs in focused cycles with regular reviews.</p>
-            <ul class="approach-step__list">
-              <li>Clear system boundaries</li>
-              <li>Configurable business rules</li>
-              <li>Secure integrations</li>
-              <li>Transaction integrity</li>
-              <li>Failure and recovery handling</li>
-              <li>Observability and auditability</li>
-            </ul>
-          </div>
-          <div class="approach-step grid-cell" data-reveal data-reveal-delay="2">
-            <span class="approach-step__num">03</span>
-            <h3>Test every path, not just the happy one</h3>
-            <p>We connect to your banks, providers, networks, and ledgers — then run each critical flow through success, timeout, reversal, and exception scenarios before anything touches production.</p>
-            <ul class="approach-step__list">
-              <li>Integration testing</li>
-              <li>Transaction simulation</li>
-              <li>Failure-path validation</li>
-              <li>Performance testing</li>
-              <li>Security testing</li>
-              <li>Production-readiness support</li>
-            </ul>
-          </div>
-          <div class="approach-step grid-cell" data-reveal data-reveal-delay="3">
-            <span class="approach-step__num">04</span>
-            <h3>Ship, stabilize, then improve</h3>
-            <p>We stay through go-live, production stabilization, and the first wave of real-world edge cases. The same team that built it handles the optimization, scaling, and continued development.</p>
-            <ul class="approach-step__list">
-              <li>Production stabilization</li>
-              <li>Performance monitoring</li>
-              <li>Incident investigation</li>
-              <li>Optimization and scaling</li>
-              <li>Continued feature development</li>
-              <li>Long-term engineering support</li>
-            </ul>
-          </div>
+    </div>
+    <div class="logos-row">
+      <p class="logos-label">Gateways</p>
+      <div class="logos-track-wrap">
+        <div class="logos-track logos-track--rev">
+          <img src="https://img.logo.dev/razorpay.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Razorpay" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/payu.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="PayU" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/cashfree.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Cashfree" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/easebuzz.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="Easebuzz" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/ccavenue.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="CCAvenue" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/gokwik.co?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="GoKwik" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/phonepe.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="PhonePe" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://img.logo.dev/sabpaisa.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="SabPaisa" width="22" height="22" loading="lazy" onerror="this.style.display='none'">
+          <!-- duplicates for seamless loop -->
+          <img src="https://img.logo.dev/razorpay.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/payu.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/cashfree.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/easebuzz.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/ccavenue.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/gokwik.co?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/phonepe.com?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
+          <img src="https://img.logo.dev/sabpaisa.in?token=pk_Yamb2qhsThWyRYGCqxMyoA" alt="" width="22" height="22" loading="lazy" onerror="this.style.display='none'" aria-hidden="true">
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Key metrics -->
-    <section class="metrics">
-      <div class="container metrics__inner">
-        <div class="metric-item" data-reveal>
-          <span class="metric-item__val"><span class="js-count" data-count="50" data-suffix="+">0</span></span>
-          <span class="metric-item__label">Financial technology projects</span>
+<!-- APPROACH timeline -->
+<section class="sec" id="approach">
+  <div class="w sec-inner">
+    <div class="rev">
+      <p class="eyebrow">How we work.</p>
+      <h2 class="sec-h">Discovery to production —<br><em>without the shortcuts.</em></h2>
+    </div>
+    <div class="approach-list">
+      <div class="a-step rev">
+        <span class="a-n">01</span>
+        <div class="a-left">
+          <h3>Map the operation first</h3>
+          <p>We start with how your business actually runs — transaction flows, partner relationships, approval processes, risk policies, accounting requirements, regulatory obligations. Architecture comes after we understand what we're building for.</p>
         </div>
-        <div class="metrics__div" aria-hidden="true"></div>
-        <div class="metric-item" data-reveal data-reveal-delay="1">
-          <span class="metric-item__val"><span class="js-count" data-count="10" data-suffix="+">0</span></span>
-          <span class="metric-item__label">Years of combined experience</span>
-        </div>
-        <div class="metrics__div" aria-hidden="true"></div>
-        <div class="metric-item" data-reveal data-reveal-delay="2">
-          <span class="metric-item__val"><span class="js-count" data-count="99.9" data-decimals="1" data-suffix="%">0</span></span>
-          <span class="metric-item__label">Availability achieved</span>
-        </div>
-        <div class="metrics__div" aria-hidden="true"></div>
-        <div class="metric-item" data-reveal data-reveal-delay="3">
-          <span class="metric-item__val">24/7</span>
-          <span class="metric-item__label">Production support</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Integration terminal -->
-    <section class="tech-visual" id="integration">
-      <div class="container tech-visual__inner">
-        <div data-reveal>
-          <p class="section-label">Integration engineering.</p>
-          <h2>Connect complex financial<br>ecosystems with confidence.</h2>
-          <p class="tech-visual__desc">We develop the integration layer between your financial product and the banks, networks, verification providers, ledgers, and operational systems it depends on.</p>
-          <ul class="tech-list">
-            <li><span class="tech-list__check">✓</span> Standardized interfaces across providers</li>
-            <li><span class="tech-list__check">✓</span> Secure authentication and access controls</li>
-            <li><span class="tech-list__check">✓</span> Idempotent request processing and retry handling</li>
-            <li><span class="tech-list__check">✓</span> Complete request and response audit trails</li>
-            <li><span class="tech-list__check">✓</span> Real-time monitoring and operational alerts</li>
+        <div class="a-right">
+          <ul class="a-list">
+            <li>Requirement and workflow mapping</li>
+            <li>Existing-system assessment</li>
+            <li>Integration inventory</li>
+            <li>Risk and control requirements</li>
+            <li>Recommended architecture</li>
+            <li>Delivery roadmap</li>
           </ul>
         </div>
-        <div class="terminal" data-reveal data-reveal-delay="1">
-          <div class="terminal__header">
-            <div class="terminal__dot"></div>
-            <div class="terminal__dot"></div>
-            <div class="terminal__dot"></div>
-            <span class="terminal__title">vrikalytics — orchestration layer</span>
-          </div>
-          <div class="terminal__body">
-            <span class="terminal__line terminal__dim">Initializing transaction orchestration layer</span>
-            <span class="terminal__line terminal__success">✓ Bank adapter configured</span>
-            <span class="terminal__line terminal__success">✓ Verification provider connected</span>
-            <span class="terminal__line terminal__success">✓ Risk policies loaded</span>
-            <span class="terminal__line terminal__success">✓ Reconciliation rules activated</span>
-            <span class="terminal__line terminal__success">✓ Monitoring and audit services enabled</span>
-            <span class="terminal__line terminal__dim">  System ready for validation</span>
-            <span class="terminal__line"><span class="terminal__prompt">$</span> <span class="terminal__cursor"></span></span>
-          </div>
+      </div>
+      <div class="a-step rev">
+        <span class="a-n">02</span>
+        <div class="a-left">
+          <h3>Build with the full picture</h3>
+          <p>We convert operational requirements into systems with clear boundaries, configurable rules, and failure handling that's part of the design — not an afterthought. Delivery runs in focused cycles with regular reviews.</p>
+        </div>
+        <div class="a-right">
+          <ul class="a-list">
+            <li>Clear system boundaries</li>
+            <li>Configurable business rules</li>
+            <li>Secure integrations</li>
+            <li>Transaction integrity</li>
+            <li>Failure and recovery handling</li>
+            <li>Observability and auditability</li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <!-- Security badges -->
-    <section class="security section--dim" id="security">
-      <div class="container security__inner">
-        <header data-reveal>
-          <p class="section-label">Engineering foundations.</p>
-          <h2>Designed for financial-grade<br>operations.</h2>
-          <p class="section-header__sub">We design security, resilience, data protection, operational controls, and auditability into the system architecture. Implementations are aligned with the client's applicable policies, partner requirements, and regulatory obligations.</p>
-          <p class="security__note">Systems can be designed to support applicable security and compliance requirements, including client-defined controls and standards.</p>
-        </header>
-        <div class="security__badges" data-reveal data-reveal-delay="1">
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5v5.2c0 4.8-3.2 8.7-8 9.8-4.8-1.1-8-5-8-9.8V6.5L12 3z"/></svg>
-            Secure Architecture
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-            Encryption in Transit and at Rest
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
-            Role-Based Access Controls
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1 3h3v3l-3 1v8l-1 3H9l-1-3V10L5 9V6h3l1-3z"/><path d="M9 13h6"/></svg>
-            Maker-Checker Workflows
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-            Secrets and Credential Management
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z M8 12h8 M12 8v8"/></svg>
-            Immutable Audit Trails
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            Transaction Integrity Controls
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>
-            Vulnerability Testing
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            Monitoring and Incident Readiness
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z M8 4v16 M16 4v16 M4 12h16"/></svg>
-            Business Continuity Design
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Data-Retention Controls
-          </div>
-          <div class="badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Compliance-Ready Reporting
-          </div>
+      <div class="a-step rev">
+        <span class="a-n">03</span>
+        <div class="a-left">
+          <h3>Test every path, not just the happy one</h3>
+          <p>We connect to your banks, providers, networks, and ledgers — then run each critical flow through success, timeout, reversal, and exception scenarios before anything touches production.</p>
+        </div>
+        <div class="a-right">
+          <ul class="a-list">
+            <li>Integration testing</li>
+            <li>Transaction simulation</li>
+            <li>Failure-path validation</li>
+            <li>Performance testing</li>
+            <li>Security testing</li>
+            <li>Production-readiness support</li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <!-- Why Vrikalytics -->
-    <section class="why-section">
-      <div class="container">
-        <header class="section-header" data-reveal>
-          <p class="section-label">Why Vrikalytics.</p>
-          <h2>We know the domain,<br>not just the APIs.</h2>
-        </header>
-        <div class="why-grid">
-          <div class="why-card" data-reveal data-reveal-delay="0">
-            <h3>We've been inside these systems, not just the docs</h3>
-            <p>UPI switches, mandate processing engines, payout platforms, reconciliation systems — we've built them. We don't spend your project budget learning the domain.</p>
-          </div>
-          <div class="why-card" data-reveal data-reveal-delay="1">
-            <h3>Built around how you run, not how the software assumes</h3>
-            <p>Approval hierarchies, routing policies, partner controls, accounting integrations — we design around your actual operation, not a generic workflow someone else configured.</p>
-          </div>
-          <div class="why-card" data-reveal data-reveal-delay="2">
-            <h3>You own it. Fully.</h3>
-            <p>Deployed in your environment, integrated with your partners, built on your stack. No platform dependency, no usage fees, no SLA tied to our uptime.</p>
-          </div>
-          <div class="why-card" data-reveal data-reveal-delay="3">
-            <h3>We design for the failure at 2am, not the demo</h3>
-            <p>Partial settlements, duplicate payments, bank timeouts, reversal edge cases — we build recovery paths, operational alerts, and team tooling for what actually goes wrong in production.</p>
-          </div>
-          <div class="why-card" data-reveal data-reveal-delay="4">
-            <h3>The same team stays through production</h3>
-            <p>We don't hand off after delivery. The engineers who designed the system handle stabilization, performance work, and continued feature development.</p>
-          </div>
-          <div class="why-card" data-reveal data-reveal-delay="5">
-            <h3>We know how these integrations actually behave</h3>
-            <p>Different banks, different protocols, different quirks in production. We know the integration surface from signed contracts to the edge cases that only show up at volume.</p>
-          </div>
+      <div class="a-step rev">
+        <span class="a-n">04</span>
+        <div class="a-left">
+          <h3>Ship, stabilize, then improve</h3>
+          <p>We stay through go-live, production stabilization, and the first wave of real-world edge cases. The same team that built it handles the optimization, scaling, and continued development.</p>
+        </div>
+        <div class="a-right">
+          <ul class="a-list">
+            <li>Production stabilization</li>
+            <li>Performance monitoring</li>
+            <li>Incident investigation</li>
+            <li>Optimization and scaling</li>
+            <li>Continued feature development</li>
+            <li>Long-term engineering support</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- FAQ -->
-    <section class="faq section--dim" id="faq">
-      <div class="container faq__inner">
-        <header data-reveal>
-          <p class="section-label">FAQ.</p>
-          <h2>Frequently asked questions.</h2>
-        </header>
-        <div class="faq__grid" data-reveal data-reveal-delay="1">
-          <div class="faq__col accordion">
-            <div class="accordion__item">
-              <button class="accordion__trigger" aria-expanded="false">
-                Does Vrikalytics provide payment-processing services?
-                <span class="accordion__icon"></span>
-              </button>
-              <div class="accordion__panel">
-                <p>No. Vrikalytics is a technology design and software-development partner. We build payment and financial infrastructure for clients that operate through their own authorized banking, network, and ecosystem relationships.</p>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__trigger" aria-expanded="false">
-                Who do you work with?
-                <span class="accordion__icon"></span>
-              </button>
-              <div class="accordion__panel">
-                <p>We work with banks, fintech companies, NBFCs, lenders, insurers, wealth platforms, payment companies, and other businesses developing financial products or modernizing financial infrastructure.</p>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__trigger" aria-expanded="false">
-                Can you build a system around our existing banking relationships?
-                <span class="accordion__icon"></span>
-              </button>
-              <div class="accordion__panel">
-                <p>Yes. We can design the orchestration and integration layer around your approved banks, payment providers, verification partners, and internal platforms.</p>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__trigger" aria-expanded="false">
-                Do you provide ready-made products or custom development?
-                <span class="accordion__icon"></span>
-              </button>
-              <div class="accordion__panel">
-                <p>Our core strength is custom financial-technology development. Where appropriate, reusable engineering components and architectural patterns can accelerate delivery without limiting the client's control or requirements.</p>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__trigger" aria-expanded="false">
-                Can you modernize an existing financial system?
-                <span class="accordion__icon"></span>
-              </button>
-              <div class="accordion__panel">
-                <p>Yes. We can assess legacy platforms, identify operational and technical risks, and modernize individual components or progressively replace the complete system.</p>
-              </div>
-            </div>
-          </div>
-          <div class="faq__col accordion">
-            <div class="accordion__item">
-              <button class="accordion__trigger" aria-expanded="false">
-                Can you work alongside our internal engineering team?
-                <span class="accordion__icon"></span>
-              </button>
-              <div class="accordion__panel">
-                <p>Yes. We can operate as an embedded specialist team, own a defined system or module, or manage the complete engineering lifecycle.</p>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__trigger" aria-expanded="false">
-                How do you approach security and compliance?
-                <span class="accordion__icon"></span>
-              </button>
-              <div class="accordion__panel">
-                <p>Security and applicable compliance requirements are considered during discovery and architecture, then carried through development, testing, deployment, and operational design. Regulatory responsibility and final compliance validation remain with the relevant authorized or regulated entity.</p>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__trigger" aria-expanded="false">
-                Can you assist with certification and partner testing?
-                <span class="accordion__icon"></span>
-              </button>
-              <div class="accordion__panel">
-                <p>We can provide technical support for integration testing, transaction simulation, documentation, issue resolution, and production-readiness activities required by the client's banking or ecosystem partners.</p>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__trigger" aria-expanded="false">
-                Do you provide post-launch support?
-                <span class="accordion__icon"></span>
-              </button>
-              <div class="accordion__panel">
-                <p>Yes. Engagements can include production stabilization, monitoring, incident investigation, performance optimization, maintenance, and continued feature development.</p>
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__trigger" aria-expanded="false">
-                How long does a project take?
-                <span class="accordion__icon"></span>
-              </button>
-              <div class="accordion__panel">
-                <p>The timeline depends on scope, integrations, regulatory dependencies, and system complexity. Following discovery, we provide a phased delivery plan with clearly defined milestones and responsibilities.</p>
-              </div>
-            </div>
-          </div>
+<!-- METRICS -->
+<section class="metrics-bar">
+  <div class="w metrics-inner">
+    <div class="m-item rev">
+      <span class="m-val">50+</span>
+      <span class="m-label">Financial technology<br>projects</span>
+    </div>
+    <div class="m-item rev">
+      <span class="m-val">10+</span>
+      <span class="m-label">Years of combined<br>experience</span>
+    </div>
+    <div class="m-item rev">
+      <span class="m-val">99.9%</span>
+      <span class="m-label">Availability<br>achieved</span>
+    </div>
+    <div class="m-item rev">
+      <span class="m-val">24/7</span>
+      <span class="m-label">Production<br>support</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATION -->
+<section class="sec" id="integration">
+  <div class="w int-inner">
+    <div class="rev">
+      <p class="eyebrow">Integration engineering.</p>
+      <h2 class="sec-h">Connect complex financial<br>ecosystems with confidence.</h2>
+      <p class="int-desc">We develop the integration layer between your financial product and the banks, networks, verification providers, ledgers, and operational systems it depends on.</p>
+      <ul class="checklist">
+        <li>Standardized interfaces across providers</li>
+        <li>Secure authentication and access controls</li>
+        <li>Idempotent request processing and retry handling</li>
+        <li>Complete request and response audit trails</li>
+        <li>Real-time monitoring and operational alerts</li>
+      </ul>
+    </div>
+    <div class="rev">
+      <div class="terminal">
+        <div class="t-bar">
+          <span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span>
+          <span class="t-title">vrikalytics — orchestration layer</span>
+        </div>
+        <div class="t-body">
+          <span class="t-line">Initializing transaction orchestration layer</span>
+          <span class="t-line t-ok">✓ Bank adapter configured</span>
+          <span class="t-line t-ok">✓ Verification provider connected</span>
+          <span class="t-line t-ok">✓ Risk policies loaded</span>
+          <span class="t-line t-ok">✓ Reconciliation rules activated</span>
+          <span class="t-line t-ok">✓ Monitoring and audit services enabled</span>
+          <span class="t-line" style="color:rgba(255,255,255,.2)">  System ready for validation</span>
+          <span class="t-line"><span style="color:#1A7F50">$</span> <span class="t-cur"></span></span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- CTA / Contact -->
-    <section class="cta-section" id="contact">
-      <div class="container cta-section__inner">
-        <div class="cta-section__left" data-reveal>
-          <p class="section-label">Get in touch.</p>
-          <h2>Tell us what<br>you're building.</h2>
-          <p>Share the system, integration, or operational problem you're working on. We'll tell you how we'd approach it — the architecture, the integrations, and where the real complexity sits.</p>
-        </div>
-        <form class="contact__form" id="contactForm" novalidate data-reveal data-reveal-delay="1">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full name</label>
-              <input type="text" id="name" name="name" required placeholder="Jane Smith" />
-            </div>
-            <div class="form-group">
-              <label for="email">Work email</label>
-              <input type="email" id="email" name="email" required placeholder="jane@company.com" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="company">Company</label>
-              <input type="text" id="company" name="company" placeholder="Company name" />
-            </div>
-            <div class="form-group">
-              <label for="orgtype">Organisation type</label>
-              <select id="orgtype" name="orgtype">
-                <option value="">Select type</option>
-                <option value="bank">Bank</option>
-                <option value="nbfc">NBFC</option>
-                <option value="fintech">Fintech</option>
-                <option value="payment">Payment Company</option>
-                <option value="lender">Lender</option>
-                <option value="insurer">Insurer</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="interest">Area of interest</label>
-            <select id="interest" name="interest">
-              <option value="">Select area</option>
-              <option value="switch">Payment Switch Technology</option>
-              <option value="mandate">Mandate and Recurring Payments</option>
-              <option value="payout">Payout Orchestration</option>
-              <option value="verification">Verification Infrastructure</option>
-              <option value="risk">Risk Management</option>
-              <option value="reconciliation">Reconciliation and Settlement</option>
-              <option value="operations">Financial Operations</option>
-              <option value="modernization">Legacy System Modernization</option>
-              <option value="other">Other Financial Technology</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Project description</label>
-            <textarea id="message" name="message" rows="4" required placeholder="Describe the system, integration, or challenge you are working on…"></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary btn--lg btn--block">Discuss Your Requirements</button>
-          <p class="form-success" id="formSuccess" role="status">Thank you. We have received your requirements and will contact you within one business day.</p>
-        </form>
+<!-- SECURITY -->
+<section class="security sec" id="security">
+  <div class="w security-inner">
+    <div class="security-header rev">
+      <p class="eyebrow">Engineering foundations.</p>
+      <h2 class="sec-h">Designed for financial-grade<br><em>operations.</em></h2>
+      <p>We design security, resilience, data protection, operational controls, and auditability into the system architecture — aligned with the client's applicable policies, partner requirements, and regulatory obligations.</p>
+      <p class="security-note">Systems can be designed to support applicable security and compliance requirements, including client-defined controls and standards.</p>
+    </div>
+    <div class="badges rev">
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5v5.2c0 4.8-3.2 8.7-8 9.8-4.8-1.1-8-5-8-9.8V6.5L12 3z"/></svg>Secure Architecture</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Encryption in Transit &amp; at Rest</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Role-Based Access Controls</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6l1 3h3v3l-3 1v8l-1 3H9l-1-3V10L5 9V6h3l1-3z"/><path d="M9 13h6"/></svg>Maker-Checker Workflows</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Secrets &amp; Credential Management</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Transaction Integrity Controls</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Monitoring &amp; Incident Readiness</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>Vulnerability Testing</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>Compliance-Ready Reporting</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z M8 4v16 M16 4v16 M4 12h16"/></svg>Business Continuity Design</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Data-Retention Controls</div>
+      <div class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z M8 12h8 M12 8v8"/></svg>Immutable Audit Trails</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec">
+  <div class="w sec-inner">
+    <div class="rev">
+      <p class="eyebrow">Why Vrikalytics.</p>
+      <h2 class="sec-h">We know the domain,<br><em>not just the APIs.</em></h2>
+    </div>
+    <div class="why-cols">
+      <div class="why-item rev"><h3>We've been inside these systems, not just the docs</h3><p>UPI switches, mandate processing engines, payout platforms, reconciliation systems — we've built them. We don't spend your project budget learning the domain.</p></div>
+      <div class="why-item rev"><h3>Built around how you run, not how the software assumes</h3><p>Approval hierarchies, routing policies, partner controls, accounting integrations — we design around your actual operation, not a generic workflow someone else configured.</p></div>
+      <div class="why-item rev"><h3>You own it. Fully.</h3><p>Deployed in your environment, integrated with your partners, built on your stack. No platform dependency, no usage fees, no SLA tied to our uptime.</p></div>
+      <div class="why-item rev"><h3>We design for the failure at 2am, not the demo</h3><p>Partial settlements, duplicate payments, bank timeouts, reversal edge cases — we build recovery paths, operational alerts, and team tooling for what actually goes wrong in production.</p></div>
+      <div class="why-item rev"><h3>The same team stays through production</h3><p>We don't hand off after delivery. The engineers who designed the system handle stabilization, performance work, and continued feature development.</p></div>
+      <div class="why-item rev"><h3>We know how these integrations actually behave</h3><p>Different banks, different protocols, different quirks in production. We know the integration surface from signed contracts to the edge cases that only show up at volume.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="background:#FAFAF8">
+  <div class="w faq-inner">
+    <div class="rev">
+      <p class="eyebrow">FAQ.</p>
+      <h2 class="sec-h">Common questions.</h2>
+    </div>
+    <div class="faq-layout">
+      <div class="faq-sidebar rev">
+        <p>Can't find what you're looking for? <a href="#contact">Get in touch</a> and we'll answer your specific questions directly.</p>
       </div>
-    </section>
+      <div class="rev">
+        <div class="acc-item">
+          <button class="acc-btn">Does Vrikalytics provide payment-processing services?<span class="acc-icon"></span></button>
+          <div class="acc-panel"><p>No. Vrikalytics is a technology design and software-development partner. We build payment and financial infrastructure for clients that operate through their own authorized banking, network, and ecosystem relationships.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn">Who do you work with?<span class="acc-icon"></span></button>
+          <div class="acc-panel"><p>We work with banks, fintech companies, NBFCs, lenders, insurers, wealth platforms, payment companies, and other businesses developing financial products or modernizing financial infrastructure.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn">Can you build a system around our existing banking relationships?<span class="acc-icon"></span></button>
+          <div class="acc-panel"><p>Yes. We can design the orchestration and integration layer around your approved banks, payment providers, verification partners, and internal platforms.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn">Do you provide ready-made products or custom development?<span class="acc-icon"></span></button>
+          <div class="acc-panel"><p>Our core strength is custom financial-technology development. Where appropriate, reusable engineering components and architectural patterns can accelerate delivery without limiting the client's control or requirements.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn">Can you modernize an existing financial system?<span class="acc-icon"></span></button>
+          <div class="acc-panel"><p>Yes. We can assess legacy platforms, identify operational and technical risks, and modernize individual components or progressively replace the complete system.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn">Can you work alongside our internal engineering team?<span class="acc-icon"></span></button>
+          <div class="acc-panel"><p>Yes. We can operate as an embedded specialist team, own a defined system or module, or manage the complete engineering lifecycle.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn">How do you approach security and compliance?<span class="acc-icon"></span></button>
+          <div class="acc-panel"><p>Security and applicable compliance requirements are considered during discovery and architecture, then carried through development, testing, deployment, and operational design. Regulatory responsibility and final compliance validation remain with the relevant authorized or regulated entity.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn">Can you assist with certification and partner testing?<span class="acc-icon"></span></button>
+          <div class="acc-panel"><p>We can provide technical support for integration testing, transaction simulation, documentation, issue resolution, and production-readiness activities required by the client's banking or ecosystem partners.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn">Do you provide post-launch support?<span class="acc-icon"></span></button>
+          <div class="acc-panel"><p>Yes. Engagements can include production stabilization, monitoring, incident investigation, performance optimization, maintenance, and continued feature development.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn">How long does a project take?<span class="acc-icon"></span></button>
+          <div class="acc-panel"><p>The timeline depends on scope, integrations, regulatory dependencies, and system complexity. Following discovery, we provide a phased delivery plan with clearly defined milestones and responsibilities.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </main>
+<!-- CONTACT -->
+<section id="contact" style="border-top:1px solid var(--border)">
+  <div class="w contact-inner">
+    <div class="contact-left rev">
+      <p class="eyebrow">Get in touch.</p>
+      <h2 class="sec-h" style="margin-bottom:16px">Tell us what<br>you're building.</h2>
+      <p>Share the system, integration, or operational problem you're working on. We'll tell you how we'd approach it — the architecture, the integrations, and where the real complexity sits.</p>
+    </div>
+    <form class="form rev" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="fg"><label for="name">Full name</label><input type="text" id="name" name="name" required placeholder="Jane Smith"/></div>
+        <div class="fg"><label for="email">Work email</label><input type="email" id="email" name="email" required placeholder="jane@company.com"/></div>
+      </div>
+      <div class="form-row">
+        <div class="fg"><label for="company">Company</label><input type="text" id="company" name="company" placeholder="Company name"/></div>
+        <div class="fg"><label for="orgtype">Organisation type</label>
+          <select id="orgtype" name="orgtype"><option value="">Select type</option><option value="bank">Bank</option><option value="nbfc">NBFC</option><option value="fintech">Fintech</option><option value="payment">Payment Company</option><option value="lender">Lender</option><option value="insurer">Insurer</option><option value="other">Other</option></select>
+        </div>
+      </div>
+      <div class="fg"><label for="interest">Area of interest</label>
+        <select id="interest" name="interest"><option value="">Select area</option><option value="switch">Payment Switch Technology</option><option value="mandate">Mandate and Recurring Payments</option><option value="payout">Payout Orchestration</option><option value="verification">Verification Infrastructure</option><option value="risk">Risk Management</option><option value="reconciliation">Reconciliation and Settlement</option><option value="operations">Financial Operations</option><option value="modernization">Legacy System Modernization</option><option value="other">Other Financial Technology</option></select>
+      </div>
+      <div class="fg"><label for="message">Project description</label><textarea id="message" name="message" rows="4" required placeholder="Describe the system, integration, or challenge you are working on…"></textarea></div>
+      <button type="submit" class="btn-sub">Discuss Your Requirements</button>
+      <p class="form-success" id="formSuccess" role="status">Thank you. We have received your requirements and will contact you within one business day.</p>
+    </form>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <a href="#home" class="navbar__logo">
-        <svg class="navbar__mark" viewBox="10 10 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.4404 12.7734L19.8037 15.6074L18.4404 18.4404L15.6074 19.8037L12.7734 18.4404L11.4102 15.6074L12.7734 12.7734L15.6074 11.4102L18.4404 12.7734Z" stroke="#C4FB50" stroke-width="0.74"/><path d="M16.2533 17.0631L16.2513 17.0631L14.9591 17.0628C14.8815 17.0641 14.783 17.0732 14.7003 17.0622L14.6964 17.0622L14.6964 17.0612C14.6526 17.0533 14.6151 17.0396 14.5854 17.024L14.5183 16.9792L14.5163 16.9773L12.115 14.9167L11.9208 14.75L12.1767 14.7497L13.8498 14.7496C13.8695 14.7493 13.8909 14.7487 13.9123 14.7486C14.0213 14.7482 14.1573 14.7644 14.2636 14.8493L14.2695 14.8541L15.5926 16.0816L16.8744 14.8553L16.8782 14.8514C16.9759 14.768 17.1029 14.7493 17.2057 14.7493L17.2926 14.7498L18.9657 14.7498L19.2167 14.7496L19.028 14.9158L16.6913 16.9758L16.6904 16.9768C16.6531 17.0086 16.5896 17.0449 16.5013 17.0619L16.5003 17.062C16.4564 17.0701 16.4114 17.0687 16.3725 17.067C16.3306 17.0651 16.2941 17.0624 16.2533 17.0631Z" fill="#C4FB50"/></svg>
-        Vrikalytics
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="w footer-main">
+    <a href="#" class="footer-logo">
+      <svg width="18" height="18" viewBox="10 10 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.4404 12.7734L19.8037 15.6074L18.4404 18.4404L15.6074 19.8037L12.7734 18.4404L11.4102 15.6074L12.7734 12.7734L15.6074 11.4102L18.4404 12.7734Z" stroke="#0D5C38" stroke-width="0.9"/>
+        <path d="M16.2533 17.0631L14.9591 17.0628C14.8815 17.0641 14.783 17.0732 14.7003 17.0622L14.6964 17.0612C14.6526 17.0533 14.6151 17.0396 14.5854 17.024L14.5183 16.9792L12.115 14.9167L11.9208 14.75L12.1767 14.7497L13.8498 14.7496C14.0213 14.7482 14.1573 14.7644 14.2636 14.8493L15.5926 16.0816L16.8744 14.8553C16.9759 14.768 17.1029 14.7493 17.2057 14.7493L18.9657 14.7498L19.2167 14.7496L19.028 14.9158L16.6913 16.9758C16.6531 17.0086 16.5896 17.0449 16.5013 17.0619C16.4564 17.0701 16.3306 17.0651 16.2533 17.0631Z" fill="#0D5C38"/>
+      </svg>
+      Vrikalytics
+    </a>
+    <nav class="footer-nav">
+      <a href="#expertise">Expertise</a>
+      <a href="#capabilities">What We Build</a>
+      <a href="#approach">How We Work</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <div class="footer-social">
+      <a href="#" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9.5 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg>
       </a>
-      <nav class="footer__links">
-        <a href="#expertise">Expertise</a>
-        <a href="#capabilities">What We Build</a>
-        <a href="#approach">How We Work</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-      </nav>
-      <div class="footer__social">
-        <a href="#" aria-label="LinkedIn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9.5 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg>
-        </a>
-        <a href="#" aria-label="Twitter / X">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.6L4.4 22H1.3l8.1-9.3L1 2h7.1l4.9 6z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <p>Specialist engineering for payment and financial infrastructure.</p>
-      <p class="footer__disclaimer">Vrikalytics provides technology consulting and software-development services. Payment-system participation and regulated financial services are delivered through each client's authorized banking and ecosystem relationships.</p>
-      <p>&copy; <span id="year"></span> Vrikalytics. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Custom cursor -->
-  <div id="cursor" aria-hidden="true">
-    <div class="cursor__dot"></div>
-    <div class="cursor__ring"></div>
-  </div>
-
-  <!-- Cookie consent banner -->
-  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie consent" aria-live="polite">
-    <div class="container cookie-banner__inner">
-      <p class="cookie-banner__text">We use essential cookies to keep this website secure and functional. Read our <a href="privacy.html">Privacy Policy</a> for details.</p>
-      <div class="cookie-banner__actions">
-        <button class="btn btn--ghost btn--sm" id="cookieDecline">Decline</button>
-        <button class="btn btn--primary btn--sm" id="cookieAccept">Accept</button>
-      </div>
+      <a href="#" aria-label="Twitter / X">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.6L4.4 22H1.3l8.1-9.3L1 2h7.1l4.9 6z"/></svg>
+      </a>
     </div>
   </div>
+  <div class="w footer-bottom">
+    <p>Specialist engineering for payment and financial infrastructure.</p>
+    <p>Vrikalytics provides technology consulting and software-development services. Payment-system participation and regulated financial services are delivered through each client's authorized banking and ecosystem relationships.</p>
+    <p>© <span id="year"></span> Vrikalytics. All rights reserved.</p>
+  </div>
+</footer>
 
-  <script src="js/main.js"></script>
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie consent" aria-live="polite">
+  <div class="cookie-banner__inner">
+    <p class="cookie-banner__text">We use essential cookies to keep this website secure and functional. Read our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    <div class="cookie-banner__actions">
+      <button class="btn-cookie" id="cookieDecline">Decline</button>
+      <button class="btn-cookie btn-cookie--primary" id="cookieAccept">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Footer year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 10), {passive:true});
+
+// Scroll reveals
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 55); ro.unobserve(e.target); }
+  });
+}, {threshold:0.07});
+document.querySelectorAll('.rev').forEach(el => ro.observe(el));
+
+// Capability accordion
+document.querySelectorAll('.cap-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const row = btn.closest('.cap-row');
+    const isOpen = row.classList.contains('open');
+    document.querySelectorAll('.cap-row.open').forEach(r => r.classList.remove('open'));
+    if (!isOpen) row.classList.add('open');
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.acc-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.acc-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.acc-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Contact form
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+if (contactForm && formSuccess) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
+    formSuccess.classList.add('is-visible');
+    contactForm.reset();
+  });
+}
+
+// Cookie banner
+const cookieBanner = document.getElementById('cookieBanner');
+if (cookieBanner && !localStorage.getItem('cookie-consent')) {
+  setTimeout(() => cookieBanner.classList.add('is-visible'), 1000);
+  const dismiss = (choice) => {
+    localStorage.setItem('cookie-consent', choice);
+    cookieBanner.classList.remove('is-visible');
+  };
+  document.getElementById('cookieAccept')?.addEventListener('click', () => dismiss('accepted'));
+  document.getElementById('cookieDecline')?.addEventListener('click', () => dismiss('declined'));
+}
+</script>
 </body>
 </html>
