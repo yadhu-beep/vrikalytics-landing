@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Vrikalytics — Fintech &amp; Payment Infrastructure Engineering</title>
   <meta name="description" content="We design and build payment, mandate, risk, reconciliation, and financial-ops systems for banks, fintechs, and NBFCs. Precision engineering for regulated businesses." />
   <link rel="canonical" href="https://vrikalytics.com/" />
@@ -81,7 +81,12 @@ button{font-family:inherit}
 
 /* ── WRAP ── */
 .w{max-width:1280px;margin:0 auto;padding:0 48px}
-@media(max-width:768px){.w{padding:0 24px}}
+@media(max-width:768px){
+  .w{
+    padding-left:max(28px,env(safe-area-inset-left,0px));
+    padding-right:max(28px,env(safe-area-inset-right,0px));
+  }
+}
 
 /* ── HERO ── */
 .hero{padding:140px 0 96px;border-bottom:1px solid var(--border)}
@@ -534,18 +539,27 @@ button{font-family:inherit}
   .nav__ham{display:flex}
 }
 @media(max-width:600px){
-  .nav__i{padding:0 20px}
+  .nav__i{
+    padding-left:max(20px,env(safe-area-inset-left,0px));
+    padding-right:max(20px,env(safe-area-inset-right,0px));
+  }
   .hero{padding:112px 0 72px}
   .hero__h br{display:none}
   .sec-inner,.faq-inner,.security-inner,.logos-inner,.int-inner,.contact-inner{padding:64px 0}
   .metrics-inner{grid-template-columns:1fr 1fr}
-  .m-item{padding:0 20px}
+  .m-item{
+    padding-left:max(20px,env(safe-area-inset-left,0px));
+    padding-right:max(20px,env(safe-area-inset-right,0px));
+  }
   .form-row{grid-template-columns:1fr}
   .a-step{grid-template-columns:48px 1fr}
   .a-n{font-size:2.5rem}
   .cap-sub{display:none}
   .cap-trigger{gap:14px}
-  .cookie-banner__inner{padding:0 20px}
+  .cookie-banner__inner{
+    padding-left:max(20px,env(safe-area-inset-left,0px));
+    padding-right:max(20px,env(safe-area-inset-right,0px));
+  }
 }
   </style>
 </head>
